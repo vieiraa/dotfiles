@@ -1,0 +1,2 @@
+alias clear="echo -ne '\033c'"
+alias dot='git --git-dir=/home/jordy/.dot/ --work-tree=/home/jordy'
