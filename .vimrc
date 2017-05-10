@@ -27,6 +27,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-endwise'
+Plug 'guns/xterm-color-table.vim'
 
 call plug#end()
 
@@ -133,7 +134,6 @@ set autoindent
 set smartindent
 set cindent
 set cinoptions=(0,u0,U0
-set undoreload=10000
 set showmatch
 set incsearch
 set ignorecase
@@ -146,6 +146,12 @@ set clipboard=unnamed,unnamedplus
 set hidden
 let mapleader = ','
 set noshowmode
+set backup
+set undofile
+set undolevels=1000
+set undoreload=10000
+set colorcolumn=80
+highlight ColorColumn ctermbg=DarkGrey
 
 vnoremap <silent> <Enter> :EasyAlign<cr>
 
