@@ -453,7 +453,10 @@ globalkeys = awful.util.table.join(
               awful.key({ modkey , altkey}, "x", function() xrandr.xrandr() end),
 
               -- Call ranger file manager
-              awful.key({ modkey }, "a", function() awful.spawn("urxvt -e ranger") end)
+              awful.key({ modkey }, "a", function() awful.spawn("urxvt -e ranger") end),
+
+              -- Take a screenshot
+                  awful.key({  }, "Print", function() awful.util.spawn_with_shell("scrot --focused '%c_$wx$h.png' --exec 'mv \"$f\" ~/Pictures/screenshots/'") end)
     --]]
 )
 
