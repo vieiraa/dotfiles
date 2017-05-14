@@ -21,7 +21,10 @@ local lain          = require("lain")
 local freedesktop   = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 local xrandr        = require("xrandr")
+local switcher      = require("awesome-switcher-preview")
 -- }}}
+
+
 
 -- {{{ Error handling
 if awesome.startup_errors then
@@ -456,7 +459,18 @@ globalkeys = awful.util.table.join(
               awful.key({ modkey }, "a", function() awful.spawn("urxvt -e ranger") end),
 
               -- Take a screenshot
-                  awful.key({  }, "Print", function() awful.util.spawn_with_shell("scrot --focused '%c_$wx$h.png' --exec 'mv \"$f\" ~/Pictures/screenshots/'") end)
+                  awful.key({  }, "Print", function() awful.util.spawn_with_shell("scrot --focused '%c_$wx$h.png' --exec 'mv \"$f\" ~/Pictures/screenshots/'") end),
+
+              -- Alt-tab
+                  awful.key({ "Mod1",           }, "Tab",
+                      function ()
+                          switcher.switch( 1, "Alt_L", "Tab", "ISO_Left_Tab")
+                  end),
+
+                  awful.key({ "Mod1", "Shift"   }, "Tab",
+                      function ()
+                          switcher.switch(-1, "Alt_L", "Tab", "ISO_Left_Tab")
+                  end)
     --]]
 )
 
@@ -699,3 +713,16 @@ if autorun then
     end
 end
 
+-- Alt-tab
+switcher.settings.preview_box = true                                 -- display preview-box
+switcher.settings.preview_box_bg = "#ddddddaa"                       -- background color
+switcher.settings.preview_box_border = "#22222200"                   -- border-color
+switcher.settings.preview_box_fps = 30                               -- refresh framerate
+switcher.settings.preview_box_delay = 150                            -- delay in ms
+switcher.settings.preview_box_title_font = {"sans","italic","normal"}-- the font for cairo
+switcher.settings.preview_box_title_font_size_factor = 0.8           -- the font sizing factor
+switcher.settings.preview_box_title_color = {0,0,0,1}                -- the font color
+
+switcher.settings.client_opacity = false                             -- opacity for unselected clients
+switcher.settings.client_opacity_value = 0.5                         -- alpha-value
+switcher.settings.client_opacity_delay = 150                         -- delay in ms
