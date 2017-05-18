@@ -28,6 +28,8 @@ Plug 'tpope/vim-rails'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-endwise'
 Plug 'guns/xterm-color-table.vim'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-lua-ftplugin'
 
 call plug#end()
 
@@ -146,7 +148,7 @@ set clipboard=unnamed,unnamedplus
 set hidden
 let mapleader = ','
 set noshowmode
-set backup
+" set backup
 set undofile
 set undolevels=1000
 set undoreload=10000
