@@ -30,6 +30,7 @@ Plug 'tpope/vim-endwise'
 Plug 'guns/xterm-color-table.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-lua-ftplugin'
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 

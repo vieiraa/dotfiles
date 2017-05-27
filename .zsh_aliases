@@ -1,2 +1,2 @@
-alias clear="echo -ne '\033c'"
+alias clear="clear && printf '\e[3J'"
 alias dot='git --git-dir=/home/jordy/.dot/ --work-tree=/home/jordy'
