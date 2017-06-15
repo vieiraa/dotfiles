@@ -218,7 +218,7 @@ nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
 :nnoremap <space>r <Plug>(unite_restart)
 
 nmap º :Ag <c-r>=expand("<cword>")<cr><cr>
-nnoremap <spapce>/ :Ag 
+nnoremap <space>/ :Ag 
 
 " save cursor position
 function! ResCur()
